@@ -21,9 +21,13 @@ const ProductoSchema = Schema({
     default: 0,
   },
   categoria: {
-    type: Schema.Types.ObjectId,
-    ref: "Categoria",
-    required: true,
+    type: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "Categoria",
+        required: true,
+      },
+    ],
   },
   desc: String,
   disponible: { type: Boolean, default: true },
